@@ -1,0 +1,155 @@
+<html>
+  <head>
+     <title>Prestamo Estudiantil</title>  
+     <link rel="shortcut icon" href="https://www.flaticon.es/svg/static/icons/svg/351/351769.svg">   
+     <link rel="stylesheet" href="color.css">
+  </head>
+    <body class="fondo">
+      <header class="header2">
+        <div class="wrapper">
+           <div class ="logo" >
+             <a href="Pagina Principal.html" >Prestamos Estudiantil</a></div>
+        
+                <nav>
+                  <a  href="Registrarse.html" >Registrarse</a> 
+                  <a  href="Sesion.html" >Iniciar Sesión</a>
+                </nav>
+            </div>
+      </header>
+
+            <div class="eslogan">
+              <center><p >Preocupado por no poder pagar tus estudios y no sabes que hacer.<br>Entonces 
+              "Prestamo Estusiantil" es tu mejor opción </p></center>
+             </div>
+             <div class="img-slider">
+     
+      <div class="slide active">
+        <img src="https://2.bp.blogspot.com/_QJTcp7oF_1k/TEVTS8lfAfI/AAAAAAAAAbw/35EW92DkQ7Q/s320/coca-cola_felicidad.jpg" alt="">
+        <div class="info">
+          
+          
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://i0.wp.com/lacriaturacreativa.com/wp-content/uploads/2020/08/McDonalds-Welcome-back-to-the-90.jpg" alt="">
+        <div class="info">
+          
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://i.pinimg.com/originals/28/8c/e5/288ce5d210479c8eaa19664a36c1224a.jpg" alt="">
+        <div class="info">
+          
+        </div>
+      </div>
+      <div class="slide">
+        <img src="img/Prototipo.jpg" alt="">
+        <div class="info">
+          
+        
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://i.pinimg.com/originals/0b/2a/40/0b2a40d954fb8630f934bb8fc45d15f3.jpg" alt="">
+        <div class="info">
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+                <div class="card" >
+                   <div class="card-body">
+                     <ul>Prestamo Básico
+                       <li >$500.00</li>
+                       <li >En 2 pagos mensuales</li>
+                       <li >Pago de $300.00</li>
+                    </ul>
+             <center><a href="index.html" >Pagar</a></center>
+         </div>
+       </div>
+         <div class="card" >
+                   <div class="card-body">
+                     <ul>Prestamo Medio
+                       <li >$1000.00</li>
+                       <li >En 6 pagos mensuales</li>
+                       <li >Pago de $180.00</li>
+                    </ul>
+             <center><a href="index.html" >Pagar</a></center>
+         </div>
+       </div>
+          <div class="card" >
+                   <div class="card-body">
+                     <ul>Prestamo Plus
+                       <li >$2000.00</li>
+                       <li >En 12 pagos mensuales</li>
+                       <li >Pago de $175.00</li>
+                    </ul>
+             <center><a href="index.html" >Pagar</a></center>
+         </div>
+       </div>
+       
+
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+    </script>
+          
+        </div>
+      </div>
+  </body>
+</html>
